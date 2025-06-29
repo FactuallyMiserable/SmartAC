@@ -59,6 +59,7 @@ Open the `.ino` or `.cpp` file and replace the following macros with your own va
 #define SUBDOMAIN       "example.mooo.com"
 #define AFRAID_API_URL  "https://freedns.afraid.org/dynamic/update.php?xxxxxxxxxxxx"
 #define AUTH_KEY        "YourCustomAuthKey"
+```
 
 ---
 
