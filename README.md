@@ -59,3 +59,99 @@ Open the `.ino` or `.cpp` file and replace the following macros with your own va
 #define SUBDOMAIN       "example.mooo.com"
 #define AFRAID_API_URL  "https://freedns.afraid.org/dynamic/update.php?xxxxxxxxxxxx"
 #define AUTH_KEY        "YourCustomAuthKey"
+
+---
+
+## 📡 REST API Examples
+
+### ✅ Turn On the AC (Set to 24°C, Cool Mode)
+
+**Endpoint:**  
+```
+
+## API
+GET /aircon
+```
+
+**Required Headers:**
+
+| Header | Value Example   | Description                        |
+|--------|------------------|------------------------------------|
+| `Auth` | `MySecretKey123` | Your authentication key            |
+| `Temp` | `24`             | Temperature (16–30 allowed)        |
+| `Mode` | `c`              | Mode: `c`=Cool, `d`=Dry, `v`=Fan, `h`=Heat |
+```
+#### 💻 Example via `curl`:
+
+```bash
+curl -X GET http://your-subdomain.example.com/aircon \
+  -H "Auth: MySecretKey123" \
+  -H "Temp: 24" \
+  -H "Mode: c"
+```
+
+#### 📬 Example via Postman:
+
+- **Method:** `GET`
+- **URL:** `http://your-subdomain.example.com/aircon`
+- **Headers:**
+  - `Auth: MySecretKey123`
+  - `Temp: 24`
+  - `Mode: c`
+
+---
+
+### ❌ Turn Off the AC
+
+**Endpoint:**  
+```
+GET /turnoff
+```
+
+**Required Header:**
+
+| Header | Value Example   | Description             |
+|--------|------------------|-------------------------|
+| `Auth` | `MySecretKey123` | Your authentication key |
+
+#### 💻 Example via `curl`:
+
+```bash
+curl -X GET http://your-subdomain.example.com/turnoff \
+  -H "Auth: MySecretKey123"
+```
+
+#### 📬 Postman:
+
+- **Method:** `GET`
+- **URL:** `http://your-subdomain.example.com/turnoff`
+- **Header:**
+  - `Auth: MySecretKey123`
+
+---
+
+### 🧪 Response Examples
+
+#### If Auth is wrong or missing:
+```
+HTTP/1.1 401 Unauthorized
+Unauthorized
+```
+
+#### If temperature is invalid (outside 16–30 range):
+```
+HTTP/1.1 500 Internal Server Error
+Temp is invalid
+```
+
+#### On success:
+```
+HTTP/1.1 200 OK
+Aircon is now ON
+```
+or
+```
+Aircon is now OFF
+```
+
+---
