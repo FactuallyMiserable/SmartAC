@@ -81,7 +81,7 @@ GET /aircon
 | `Auth` | `MySecretKey123` | Your authentication key            |
 | `Temp` | `24`             | Temperature (16–30 allowed)        |
 | `Mode` | `c`              | Mode: `c`=Cool, `d`=Dry, `v`=Fan, `h`=Heat |
-```
+
 #### 💻 Example via `curl`:
 
 ```bash
@@ -110,7 +110,6 @@ GET /turnoff
 ```
 
 **Required Header:**
-
 | Header | Value Example   | Description             |
 |--------|------------------|-------------------------|
 | `Auth` | `MySecretKey123` | Your authentication key |
