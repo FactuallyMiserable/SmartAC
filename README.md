@@ -1,6 +1,6 @@
 # Smart AC Controller (ESP8266)
 
-This project combines skills in electronics and embedded systems to transform a traditional ("dumb") AC unit into a web-controlled smart device. It uses an ESP8266 microcontroller programmed in C++ to simulate remote button presses using BJT transistors and exposes a REST API via a local web server. Additionally, it updates a free DNS record using your current public IP address, allowing you to control your AC remotely even if your IP changes.
+This project combines skills in electronics and embedded systems to transform a traditional ("dumb") AC unit into a web-controlled smart device. It uses an ESP8266 microcontroller programmed in the Arduino language (C/C++) to simulate remote button presses using BJT transistors and exposes a REST API via a local web server. Additionally, it updates a free DNS record using your current public IP address, allowing you to control your AC remotely even if your IP changes.
 
 ---
 
