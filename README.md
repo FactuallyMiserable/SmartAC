@@ -69,8 +69,6 @@ Open the `.ino` or `.cpp` file and replace the following macros with your own va
 
 **Endpoint:**  
 ```
-
-## API
 GET /aircon
 ```
 
